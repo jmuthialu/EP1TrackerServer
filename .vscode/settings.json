@@ -4,5 +4,6 @@
         ".vscode{,/**}"
     ],
     "appService.deploySubpath": ".",
-    "appService.defaultWebAppToDeploy": "None"
+    "appService.defaultWebAppToDeploy": "None",
+    "git.ignoreLimitWarning": true
 }
