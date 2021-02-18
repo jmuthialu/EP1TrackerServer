@@ -3,7 +3,6 @@ const jwt = require('jsonwebtoken')
 
 // TODO:- No secrets here. Move to container.
 const jwtSecret = 'gmsecret'
-const jwtTokenCookieName = 'gmtoken'
 
 async function authenticateUser(usersList, signingUser, res) {
   const hashedUser = usersList.filter( user => user.emailId == signingUser.emailId)  
@@ -17,8 +16,6 @@ async function authenticateUser(usersList, signingUser, res) {
         const token = jwt.sign(payload, jwtSecret, {
           expiresIn: '1h'
         })
-        // const tokenPayload = { tokenkey: token}
-        // console.log(tokenPayload)
         const { password, ...newUserObj } = firstHashedUser
         newUserObj.authToken = token
         console.log([newUserObj])
@@ -33,9 +30,6 @@ async function authenticateUser(usersList, signingUser, res) {
     res.status(401).send("No user found in the users list")
   }
 }
-
-// req.cookies: {jwtToken:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbElkIjoiYSIsImlhdCI6MTU3MjMwMTI5OSwiZXhwIjoxNTcy
-//MzA0ODk5fQ.85C6wvr-YMTZFFLwGx32X4Q3DZTDlEKw1YRZiw3-Xw0"}
 
 function checkToken(req, res) {
   const token = 

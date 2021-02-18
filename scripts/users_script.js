@@ -1,7 +1,6 @@
 const bcrypt = require('bcryptjs')
 const saltRounds = 10
 
-// await will not work within closure so add another async
 async function hashUserPassword(userList) {
   const promiseArray = userList.map(async (user) => {
     const hashedPwd = await new Promise((resolve, reject) => {
@@ -19,11 +18,7 @@ async function hashUserPassword(userList) {
   })
 
   const usersWithHashedPwd = await Promise.all(promiseArray)
-  // console.log(usersWithHashedPwd)
   return usersWithHashedPwd
 }
-
-
-// hashUserPassword(userList)
 
 module.exports = { hashUserPassword }

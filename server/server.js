@@ -6,10 +6,10 @@ const { hashUserPassword } = require('../scripts/users_script.js')
 const { authenticateUser } = require('./authentication.js')
 
 const app = express();
-app.use(bodyParser.json()) // Without this req.body will be undefined
+app.use(bodyParser.json()) 
 app.use(express.static('public'));
 
-// Called when user logs in with credentials
+// Authenticate users with credentials provided. 
 app.post('/users/authenticate', (req, res) => {
   console.log('POST /users/authenticate')
   console.log(`req.body: ${req.body}`)

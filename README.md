@@ -1,4 +1,4 @@
-# EP1 Tracking Server
+# EP1 Tracking API Server
 
 ## Setup
 
@@ -7,28 +7,12 @@ $ npm i
 $ npm start
 ```
 
-## WebApp
-
-https://ep1tracker.azurewebsites.net
 https://ep1tracker.azurewebsites.net/epallets
 
-## iOS
+## Techincal comments
 
-let urlString = "https://ep1tracker.azurewebsites.net/issuesList"
-let url = URL(string: urlString)
-let task = URLSession.shared.dataTask(with: url!) { (data, response, error) in
-    if let error = error {
-        print("error occured: \(error)")
-    } else {
-        do {
-            let serialized = try JSONSerialization.jsonObject(with: data!, options: []) as? [String: Any]
-            print("serialized: \(serialized)")
-        } catch {
-            print("JSON error: \(error)")
-        }
-    }
-}
+- API server runs on node and express framework.
+- Authentication is done by JWT and encrypted using brypt framework. 
+- Currently data is persisted in memory. if time permits I would have persisted in mongodb.
 
-task.resume()
-```
 
