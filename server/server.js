@@ -36,13 +36,15 @@ app.post('/epallets/:id', (req, res) => {
     lockStatus = true
   }
   
+  var resultFlag = false
   epallets.forEach(function(epallet, i) { 
     if (epallet.id == palletId) {      
       epallets[i]['isLocked'] = lockStatus
-      console.log(`isLocked changed to ${lockStatus} for id ${palletId}`)
+      resultFlag = true
+      console.log(`isLocked changed to ${lockStatus} for id ${palletId} - resultFlag: ${resultFlag}`)
     } 
   })
-  res.send('true')
+  res.send({ status: resultFlag })
 })
 
 const port = process.env.port || 8080;
