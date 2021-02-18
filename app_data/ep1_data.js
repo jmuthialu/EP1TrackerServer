@@ -6,6 +6,7 @@ const epallets =
       title: 'Rack100 EP1', 
       status: 'Moving', 
       imageName: 'pallet',
+      isLocked: false,
       coordinate: {
         latitude: 33.234949,
         longitude: -84.386330
@@ -17,6 +18,7 @@ const epallets =
       status: 'Moving', 
       title: 'Rack200 EP1',
       imageName: 'pallet',
+      isLocked: false,
       coordinate: {
         latitude: 33.11404,
         longitude: -84.396330
@@ -28,6 +30,7 @@ const epallets =
       status: 'Stopped', 
       title: 'Rack300 EP1',
       imageName: 'pallet',
+      isLocked: false,
       coordinate: {
         latitude: 33.763746,
         longitude: -84.213840
@@ -39,6 +42,7 @@ const epallets =
       status: 'Stopped', 
       title: 'Rack400 EP1',
       imageName: 'pallet',
+      isLocked: false,
       coordinate: {
         latitude: 33.683982,
         longitude: -84.193830
@@ -50,6 +54,7 @@ const epallets =
       status: 'Stopped', 
       title: 'Rack500 EP1',
       imageName: 'pallet',
+      isLocked: false,
       coordinate: {
         latitude: 33.239230,
         longitude: -84.563300
@@ -61,6 +66,7 @@ const epallets =
       status: 'Stopped', 
       title: 'Rack600 EP1',
       imageName: 'pallet',
+      isLocked: false,
       coordinate: {
         latitude: 33.802820,
         longitude: -84.489200
