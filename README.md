@@ -13,6 +13,6 @@ https://ep1tracker.azurewebsites.net/epallets
 
 - API server runs on node and express framework.
 - Authentication is done by JWT and encrypted using brypt framework. 
-- Currently data is persisted in memory. if time permits I would have persisted in mongodb.
+- Currently data is persisted in memory. If time permits, I would have persisted in mongodb.
 
 
